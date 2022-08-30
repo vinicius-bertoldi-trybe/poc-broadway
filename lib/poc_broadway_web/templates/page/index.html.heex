@@ -1,0 +1,26 @@
+<section class="row">
+  <article class="column">
+    <h2>Por que desse projeto?</h2>
+    <p>
+        O Objetivo desse projeto é ser uma prova de conceito sobre a implementação de filas para processamento de tarefas assíncronas usando
+        <a href="https://hexdocs.pm/broadway/rabbitmq.html#content" target="_blank"> Broadway </a>.
+    </p>
+
+    <h2>O que esse projeto faz?</h2>
+    <p>Ao fazer o envio do formulário ao lado os dados dos inputs deverão ser salvo em um Job para serem executados em uma fila.</p>
+
+    <p style="font-size: 12px">Obs: algumas boas práticas foram propositalmente ignoradas na criação desse projeto visto que o objetivo aqui é somente de testar o funcionamento da biblioteca Broadway. </p> 
+  </article>
+  <article class="column">
+    <h2>Dados para serem salvos</h2>
+    <%= form_for @conn, Routes.page_path(@conn, :create), [as: :userdata], fn f -> %>
+        <%= label f, :name, "Name" %>
+        <%= text_input f, :name %>
+
+        <%= label f, :email, "Email" %>
+        <%= text_input f, :email %>
+
+        <%= submit "Enviar" %>
+    <% end %>
+  </article>
+</section>
